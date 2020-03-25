@@ -23,7 +23,16 @@ date = pd.read_csv("angajati.csv")
 # print(date.loc[0:2, ['Nume', 'Functie', 'Salariu']])
 
 # MODIFICARE DATE
-date.loc[7, 'Functie'] = 'Front End Developer'
-date.loc[7, 'Salariu'] = 8000
-print("Dupa actualizarea functiei, informatiile despre angajat sunt:")
-print(date.loc[7])
+# date.loc[7, 'Functie'] = 'Front End Developer'
+# date.loc[7, 'Salariu'] = 8000
+# print("Dupa actualizarea functiei, informatiile despre angajat sunt:")
+# print(date.loc[7])
+
+# FUNCTII DE GRUP SI TRATARE VALORI LIPSA
+salariu_mediu = date['Salariu'].mean()
+print('Salariu mediu este de:', salariu_mediu)
+salariu_max = date['Salariu'].max()
+print('Salariul maxim este de:', salariu_max)
+date['Salariu'] = date['Salariu'].fillna(value=salariu_mediu)
+print('Dupa inlocuirea valorilor lipsa cu salariul mediu, situatia angajatilor este:')
+print(date)
