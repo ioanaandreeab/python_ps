@@ -1,4 +1,5 @@
 import pandas as pd
+
 date = pd.read_csv("angajati.csv")
 # salarii = date["Salariu"].tolist()
 # print("Salarii inainte de majorare: ", salarii)
