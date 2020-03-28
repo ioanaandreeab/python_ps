@@ -1,7 +1,6 @@
 import pandas as pd
 import statsmodels.formula.api as smf
 
-
 angajati = pd.read_csv('angajati_salarii_majorate.csv')
 angajati_date = pd.read_csv('angajati_date.csv')
 
@@ -16,6 +15,8 @@ for index in range(len(studii)):
         studii[index] = 2
     else:
         studii[index] = 3
+
+angajati_date['Studii'] = studii
 
 X = pd.DataFrame(angajati_date, columns=['Studii', 'Vechime'])
 Y = angajati['Salariu']
